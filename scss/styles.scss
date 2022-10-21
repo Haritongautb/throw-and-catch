@@ -1,0 +1,150 @@
+@import "./normalize";
+@import "./reset";
+
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 3000px;
+
+    font-family: sans-serif;
+}
+
+[class*="__container"]{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.block-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 400px;
+    margin-bottom: 600px;
+}
+
+.button{
+    position: relative;
+
+    text-align: center;
+    padding: 20px;
+    background-color: grey;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    z-index: 5;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 100%;
+        background-color: red;
+        transition: all .3s linear;
+        border-radius: 30px;
+        z-index: -1;
+    }
+    &:hover::after{
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+.modal{
+    &__window{
+        position: fixed;
+        top: 0; 
+        left: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        overflow: hidden;
+    }
+    &__inner{
+        max-width: 600px;
+        margin: 50px auto;
+    }
+    &__container{
+        z-index: 200;
+    }
+}
+
+.form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    background-color: #fff;
+    overflow-x: auto; 
+    &__block-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 30px;
+    }
+    &__btn-close{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    &__block-title{
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+    }
+    &__modal-input{
+        display: block;
+
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+
+        background-color: #ffffff;
+        border: none;
+        box-shadow: 0 4px 15px rgb(0, 0, 0, 20%);
+        &::placeholder{
+            font-family: sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 1;
+    }
+}

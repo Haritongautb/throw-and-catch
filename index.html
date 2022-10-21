@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>try 2</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body class="body">
+
+    <div class="btn__container">
+        <div class="block-btn">
+            <button class="button" type="button" data-open-modal>Связаться с нами</button>
+        </div>
+        <div class="block-btn">
+            <button class="button" type="button" data-open-modal>Связаться с нами</button>
+        </div>
+    </div>
+
+    <div class="modal__window hide">
+        <div class="modal__inner">
+            <form class="form" action="#">
+                <div class="form__block-wrapper">
+                    <div class="form__btn-close" data-close-modal>&times;</div>
+                    <h3 class="form__block-title">Мы свяжемся с вами как можно быстрее!</h3>
+                    <input class="form__modal-input" type="text" placeholder="Ваше имя" name="name" required>
+                    <input class="form__modal-input" type="phone" placeholder="Ваш номер телефона" name="phone" required>
+                    <button class="button form__btn-admit" type="submit">Перезвонить мне</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./effect.js"></script>
+</body>
+
+</html>
